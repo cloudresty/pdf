@@ -39,10 +39,10 @@ func main() {
 	// Read PDF File
 	//
 
-	pdfText, err := readPDF("file.pdf")
+	pdfText, errReadPDF := readPDF("file.pdf")
 
-	if err != nil {
-		panic(err)
+	if errReadPDF != nil {
+		panic(errReadPDF)
 	}
 
 	fmt.Println(pdfText)
@@ -107,10 +107,14 @@ func readPDF(path string) (string, error) {
 	}
 
 	//
-	// Extract Formatted Text
+	// Page Count
 	//
 	
 	totalPage := r.NumPage()
+
+	//
+	// Loop Through Pages
+	//
 
 	for pageIndex := 1; pageIndex <= totalPage; pageIndex++ {
 
@@ -119,6 +123,10 @@ func readPDF(path string) (string, error) {
 		if p.V.IsNull() {
 			continue
 		}
+
+		//
+		// Extract Formatted Text
+		//
 
 		var lastTextStyle pdf.Text
 		texts := p.Content().Text
