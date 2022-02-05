@@ -8,15 +8,16 @@ __Features__
   - Get content (including all font and formatting information)
 
 &nbsp;
-## Install
+## Install Read PDF Go library
 
 `go get -u github.com/cloudresty/pdf`
 
 &nbsp;
-## Examples
-&nbsp;
-### Read plain text
+## Read PDF Go Library Examples
 
+<details>
+  <summary>Go Read PDF - Plain Text</summary>
+  
 ```golang
 package main
 
@@ -87,9 +88,10 @@ func readPDF(path string) (string, error) {
 
 }
 ```
+</details>
 
-&nbsp;
-### Read all text with styles from PDF
+<details>
+  <summary>Go Read PDF - Formatted Text</summary>
 
 ```golang
 //
@@ -156,9 +158,10 @@ func readPDF(path string) (string, error) {
 
 }
 ```
+</details>
 
-&nbsp;
-### Read text grouped by rows
+<details>
+  <summary>Go Read PDF - Text Grouped by Rows</summary>
 
 ```golang
 package main
@@ -253,3 +256,4 @@ func readPDF(path string) (string, error) {
 	return "", nil
 }
 ```
+</details>
