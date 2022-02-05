@@ -92,6 +92,10 @@ func readPDF(path string) (string, error) {
 ### Read all text with styles from PDF
 
 ```golang
+//
+// Read PDF Function (standalone)
+//
+
 func readPDF(path string) (string, error) {
 
 	//
@@ -187,6 +191,10 @@ func main() {
 	return
 
 }
+
+//
+// Read PDF Function
+//
 
 func readPDF(path string) (string, error) {
 
